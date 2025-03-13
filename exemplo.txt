@@ -1,0 +1,43 @@
+lado_1 = int(input('Digite o primeira lado:'))
+lado_2 = int(input('Digite o segundo lado:'))
+lado_3 = int(input('Digite o terceiro lado:'))
+
+eq = lado_1==lado_2 and lado_2==lado_3
+
+es = lado_1 != lado_2 and lado_2 != lado_3 and lado_3 != lado_1
+
+tri = lado_1 < lado_2 + lado_3 and lado_2 < lado_1 + lado_3 and lado_3 < lado_1 + lado_2
+
+print(f'Pode formar um triângulo: {tri}')
+
+print(f'O triângulo é equilátero: {eq}.')
+
+print(f'O triângulo é escaleno: {es}.')
+
+current_year = int(input('Em que ano nós estamos? '))
+
+born_year = int(input('Em que ano eu nasci?'))
+
+age = current_year - born_year
+
+print(f'Minha idade será de {age} anos.')
+
+money_real = float(input('Quanto em real você tem? R$'))
+
+dollar_quote = float(input('Qual é a cotação do dólar hoje? US$'))
+
+money_dollar = money_real/dollar_quote
+
+print(f'{money_real} reais convetidos em dollar é {money_dollar:.2f} dólares.')
+
+tf = float(input('Qual é a temperatura em fahrenheit? '))
+
+tc = (tf - 32)/1.8
+
+print(f'A temperatura é de {tc:.2f}°C.')
+
+produto = float(input('Qual é o valor do produto? '))
+
+imposto = produto*0.6
+
+print(f'O valor do imposto do produto vai ser de R${imposto:.2f} reais.')
