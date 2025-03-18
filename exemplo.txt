@@ -41,3 +41,37 @@ produto = float(input('Qual é o valor do produto? '))
 imposto = produto*0.6
 
 print(f'O valor do imposto do produto vai ser de R${imposto:.2f} reais.')
+
+class Cachorro:
+    def __init__(self,nome,comida,sono):
+        self.nome = nome
+        self.comida = comida
+        self.sono = sono
+
+    def comer(self):
+            self.comida -= 1
+
+    def dormir(self):
+            self.sono = False
+
+cachorro_1 = Cachorro('Nelson',3,False)
+
+cachorro_1.comer()
+print(cachorro_1.comida)  # Deve imprimir 2
+
+
+from dataclasses import dataclass
+
+
+@dataclass
+class Cliente:
+    nome: str
+    email: str
+    idade: int
+
+    def exibir(self):
+        print(f'Meu nome é {self.nome}, tenho {self.idade} anos e meu e-mail é: {self.email}.')
+
+rob = Cliente(nome='Robert', email='robert.melo@gmail.com',idade=29)
+
+rob.exibir()
