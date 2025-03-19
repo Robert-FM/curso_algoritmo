@@ -75,3 +75,128 @@ class Cliente:
 rob = Cliente(nome='Robert', email='robert.melo@gmail.com',idade=29)
 
 rob.exibir()
+
+
+nome = input('Nome: ').strip()
+sexo = input('sexo [M/F]:').strip().upper()
+price = float(input('Valor da compra: R$'))
+
+if sexo in 'F':
+    print(f'Você ganhou um desconto de 13% e o valor será de R${price*0.87:.2f}.')
+else:
+    print(f'Você ganhou um desconto de 5% e o valor será de R${price*0.95:.2f}.')
+
+
+
+current_year = int(input('Em que ano nós estamos? '))
+
+born_year = int(input('Em que ano eu nasci?'))
+
+age = current_year - born_year
+
+print(f'Minha idade será de {age} anos.')
+
+if age >= 21:
+    print(f'E terá atingindo a maior idade.')
+else:
+    print(f'E não terá atingindo a maior idade.')
+
+
+current_year = int(input('Ano Atual (yyyy): '))
+born_year = int(input('Ano de Nascimento (yyyy): '))
+
+idade = current_year - born_year
+
+print('-=-'*10)
+print('DEPARTAMENTO DE TRÂNSITO')
+print('-=-'*10)
+
+print('----------STATUS----------')
+if idade >= 18:
+    print(f'Idade: {idade} anos.\nApto a tirar a carteira.')
+else:
+    print(f'Idade: {idade} anos.\nInapto a tirar a carteira.')
+print('-'*26)
+
+print(f'{' CRIANÇA ESPERANÇA ':=^40}')
+print('')
+print('''OBRIGADO PELA AJUDA:
+[1] Para doar R$10 reais 
+[2] Para doar R$25 reais
+[3] Para doar R$50 reais
+[4] Para doar outros valores
+[5] Para cancelar''')
+print('')
+
+escolha = int(input('Qual opção de doação você quer? '))
+
+match escolha:
+    case 1:
+        print(f'Você dou R$10 reais.')
+    case 2:
+        print(f'Você dou R$25 reais.')
+    case 3:
+        print(f'Você dou R$50 reais.')
+    case 4:
+        valor = float(input('Qual o valor de doação? R$'))
+        print(f'Você dou R${valor} reais.')
+    case 5:
+        print(f'Você dou R$0 reais.')
+
+name = input('Qual é o nome do colaborador: ')
+salary = float(input('Qual é o salário do colaborador: R$'))
+dep = int(input('Qual é a quantidade de dependentes do colaborador? '))
+
+match dep:
+    case 0:
+        new_salary = salary * 1.05
+    case 1| 2| 3:
+        new_salary = salary * 1.1
+    case 4| 5| 6:
+        new_salary = salary * 1.15
+    case _:
+        new_salary = salary * 1.18
+
+print(f'O salário do colaborador {name} é de R${new_salary:.2f}.')
+
+contador = 0
+
+number = int(input('Número: '))
+number_salto = int(input('Número salto: '))
+
+while contador <= number:
+    print(contador)
+    contador += number_salto
+
+contador = soma = maior = 0
+
+while contador <= 5:
+    number = int(input(f'Número ({contador}): '))
+    contador += 1
+    soma += number
+
+    if maior == 0 or number > maior:
+        maior = number
+
+print(contador)
+print(soma)
+print(f'Maior número digitado: {maior}')
+
+c = 1
+
+while c <= 4:
+    money_real = float(input('Quanto em real você tem? R$'))
+    dollar_quote = 2.22
+    money_dollar = money_real/dollar_quote
+    print(f'{money_real} reais convetidos em dollar é US${money_dollar:.2f} dólares.')
+    c += 1
+
+c = 1
+
+number = int(input('Quantas: '))
+while c <= number:
+    money_real = float(input('Quanto em real você tem? R$'))
+    dollar_quote = 2.22
+    money_dollar = money_real/dollar_quote
+    print(f'{money_real} reais convetidos em dollar é US${money_dollar:.2f} dólares.')
+    c += 1
