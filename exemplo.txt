@@ -236,3 +236,192 @@ print(soma_impar)
 for i in range(1,4):
     for j in range(1,4):
         print(i,j)
+
+print(f'CONTAGEM INTELIGENTE')
+print('-'*30)
+
+number_inicio = int(input('Início: '))
+number_fim = int(input('Fim: '))
+
+print('-'*30)
+print(f'CONTANTO')
+print('-'*30)
+
+if number_fim > number_inicio:
+    while number_inicio <= number_fim:
+        print(number_inicio,end='... ')
+        number_inicio += 1
+else:
+    while number_inicio >= number_fim:
+        print(number_inicio,end='... ')
+        number_inicio -= 1
+print()
+
+c = maior = melhor_aluno =0
+
+print('-'*30)
+print(f'ESCOLA KEPLER')
+print('-'*30)
+
+number = int(input('Quantos alunos tem na turma: '))
+print('-'*30)
+
+while c < number:
+    print(f'Alunos {c+1}')
+    aluno = input('Nome do alunos: ')
+    nota = float(input(f'Notas do {aluno}: '))
+    print('-'*20)
+    
+    if c == 0 or nota > maior:
+        maior = nota
+        melhor_aluno = aluno
+        
+    c += 1
+
+print(f'O aluno com a maior nota é {melhor_aluno} com {maior} pontos.')
+
+
+c = soma = c_5 = c_0 = soma_par = 0
+
+for n in range(1,6):
+    numbers = int(input(f'Digite o {n}° valor: '))
+    soma += numbers
+    c += 1
+
+    if numbers % 5 == 0:
+        c_5 += 1
+    if numbers == 0:
+        c_0 += 1
+    if numbers % 2 == 0:
+        soma_par += numbers
+
+print(soma)
+print(soma/c)
+print(c_5)
+print(c_0)
+print(soma_par)
+
+def Topo(maior):
+    print('-'*30)
+    print(f'DETECTOR DE PESADO')
+    print(f'MAIOR PESO ATÉ AGORA {maior} kg')
+    print('-'*30)
+
+maior = pessoa_massa = 0
+pessoa_massa = ''
+
+for p in range(1,6):
+        Topo(maior)
+        name = input('Nome: ')
+        mass = float(input('Peso: '))
+
+        if mass > maior:
+              maior = mass
+              pessoa_massa = name
+
+print(f'{pessoa_massa} - {maior}')
+
+
+def soma(a,b):
+    soma = a + b
+    print(f'A soma de {a} e {b} é {soma}.')
+
+soma(5,3)
+
+def ParouImpar(x):
+    if x % 2 == 0:
+        print(f'O número é par.')
+    else:
+        print(f'O número é Ímpar.')
+
+number = int(input('Número: '))
+ParouImpar(number)
+
+def soma(a,b):
+    a = a + 1
+    b = b + 2
+    return a,b
+
+x = 4
+y = 8
+x,y = soma(x,y)
+print(f'{x} e {y}')
+
+def fibonacci(x):
+    t_1 = 0
+    print(t_1,end=' ')
+    t_2 = 1
+    print(t_2,end=' ')
+
+    for t in range(1,x):
+        t_3 = t_2 + t_1
+        print(t_3,end=' ')
+        t_1 = t_2
+        t_2 = t_3
+
+number = int(input('Número: '))
+fibonacci(number)
+
+def ParouImpar(x):
+    if x % 2 == 0:
+        return 'Par'
+    else:
+        return 'Ímpar'
+
+number = int(input('Número: '))
+r = ParouImpar(number)
+print(r)
+
+def Fatorial(x):
+    fatorial = 1
+
+    for c in range(1,x+1):
+        fatorial *= c
+    print(f'O fatorial de {x} é {fatorial}.')
+
+number = int(input('Número: '))
+Fatorial(number)
+
+c_par = 0
+
+v = []  
+
+for c in range(1, 7):
+    num = int(input('Número: '))
+    v.append(num)
+    if num % 2 == 0:
+        c_par += 1
+
+print("Valores digitados:", v)
+print("Quantidade de números pares:", c_par)
+
+for p,c in enumerate(v):
+    if v[p] % 2 == 0:
+        print(f"Posição {p}: {c}", end=", ")
+
+total_pessoas = 0
+nomesC = []
+
+for i in range(3):
+    name = input('Nome: ').strip().upper()
+    if name[0] == 'C':
+        nomesC.append(name)
+        total_pessoas += 1
+
+print(nomesC)
+print(total_pessoas)
+
+
+vetor = []
+
+for v in range(10):
+    num = int(input('Número: '))
+    vetor.append(num)
+
+for i in range(10):
+    for j in range(9-i):
+        if vetor[j] > vetor[j + 1]:  # Troca se estiver fora de ordem
+            vetor[j], vetor[j + 1] = vetor[j + 1], vetor[j]
+            
+for v in vetor:
+    print(v,end=', ')
