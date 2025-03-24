@@ -425,3 +425,135 @@ for i in range(10):
             
 for v in vetor:
     print(v,end=', ')
+
+print('-'*30)
+print(f'CAMPEONATO DE FUTEBOL'.center(30))
+print('-'*30)
+
+torneio = []
+
+for q in range(3):
+    time = input(f'Nome do {q+1}° time: ')
+    torneio.append(time)
+
+print('-'*30)
+
+for i in range(len(torneio)):
+    for j in range(i+1,len(torneio)):
+        print(f'{torneio[i]} x {torneio[j]}'.center(30))
+        print(f'{torneio[j]} x {torneio[i]}'.center(30))
+        print('-'*30)
+
+gabarito = []
+alunos = []
+
+# Função para coletar as respostas dos alunos
+def questao():
+    respostas = []
+    for q in range(5):
+        resposta = input(f'Questão {q+1}°: ')
+        respostas.append(resposta)
+    return respostas
+
+# Coletar as questões do gabarito
+print('-'*30)
+print(f'GABARITO'.center(30))
+print('-'*30)
+for g in range(5):
+    question = input(f'Questão {g+1}°: ')
+    gabarito.append(question)
+
+# Coletar as respostas dos alunos e contar os acertos
+for a in range(3):
+    print('-'*30)
+    name = input('Nome do aluno: ')
+    print('-'*30)
+    respostas_aluno = questao()  # Chama a função questao para coletar as respostas
+    acertos = 0  # Inicializa o contador de acertos
+    # Contando os acertos do aluno
+    for i in range(5):
+        if respostas_aluno[i].lower() == gabarito[i].lower():  # Comparação ignorando maiúsculas/minúsculas
+            acertos += 1
+    alunos.append({'nome': name, 'respostas': respostas_aluno, 'acertos': acertos})
+
+# Exibindo os resultados
+for aluno in alunos:
+    print(f"\nAluno: {aluno['nome']}")
+    for i, resposta in enumerate(aluno['respostas']):
+        print(f"Questão {i+1}: {resposta}")
+    print(f"Acertos: {aluno['acertos']}")
+
+matriz = []
+
+for i in range(3):
+    linha = []
+    for j in range(2):
+        linha.append(int(input(f'Número [{i}][{j}]:')))
+    matriz.append(linha)
+
+for l in matriz:
+    print(l)
+
+matriz = []
+c = 0
+
+for i in range(3):
+    linha = []
+    for j in range(3):
+        num = int(input(f'Número [{i}][{j}]:'))
+        linha.append(num)
+    matriz.append(linha)
+
+for linha in matriz:
+    for num in linha:
+        if num % 2 == 0:
+            print(f"\033[1;34m{num}\033[0m", end=" ")  # Azul para destacar
+            c += 1
+        else:
+            print(num, end=" ")
+    print()
+    
+print(c)
+
+matriz = []
+
+for i in range(3):
+    linha = []
+    for j in range(3):
+        linha.append(1 if i == j else 0)
+    matriz.append(linha)
+
+for linha in matriz:
+    print(linha)
+
+from random import randint
+
+soma_dprincipal =  maior = 0
+mult_linha_2 = 1
+
+matriz = []
+
+for i in range(4):
+    linha = []
+    for j in range(4):
+        valor = randint(0,100) if i == j else randint(0,100)
+        linha.append(valor)
+
+        if i == j:
+            soma_dprincipal += valor
+
+    matriz.append(linha)
+
+for linha in matriz:
+    print(linha)
+
+for j in range(4):
+    mult_linha_2 *= matriz[1][j]
+
+for i in range(4):
+    if matriz[i][2] > maior:
+        maior = matriz[i][2]
+
+print(f'Soma da diagonal principal: {soma_dprincipal}')
+print(f'Produto da segunda linha: {mult_linha_2}')
+print(maior)
